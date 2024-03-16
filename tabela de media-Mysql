@@ -1,0 +1,17 @@
+Construa uma tabela de médias de watched que possuam watched_percentage maior que 0.5 e agrupe por language:
+
+Funções utilizadas: Operação Matemática | Agrupamento | Where
+Tabelas: leads_demo_watched_details
+Query:
+Select
+    language as Linguagem,
+    avg(watched_percentage) as Porcentagem
+from leads_demo_watched_details
+where watched_percentage > 0.5
+group by language
+order by Porcentagem desc
+ 
+telegu : 0,76
+Hindi: 0,69
+English : 0,82
+ 
