@@ -1,0 +1,8 @@
+gráfico de linhas mostrando a quantidade de ligações atendidas por plataforma:
+
+Funções utilizadas: Operação Matemática | Agrupamento | União | Where
+Tabelas: leads_basic_details | leads_basic_details
+Query:
+ 
+select A.jnr_sm_id, count(A.call_status), A.call_done_date, B.lead_gen_source from leads_interaction_details A left join leads_basic_details B on A.lead_id = B.lead_id
+WHERE A.call_status = "successful" group by A.jnr_sm_id, B.lead_gen_source, A.call_done_date
